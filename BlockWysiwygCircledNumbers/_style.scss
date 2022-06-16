@@ -1,0 +1,131 @@
+[is='flynt-block-wysiwyg-circled-numbers'] {
+  // line-height: 1.3;
+
+  h1 {
+    padding: 0;
+    margin: 0;
+    font-weight: 800;
+  }
+
+  .accent {
+    color: $color-accent;
+  }
+
+  .lavender {
+    color: $color-lavender;
+  }
+
+  .white {
+    color: white;
+  }
+
+  .counter-icons {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+
+    @media (min-width: $breakpoint-tablet-horizontal) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &--none {
+      display: none;
+    }
+
+    .icon-container {
+      display: flex;
+      flex-direction: row;
+      font-weight: 800;
+      line-height: 1.1;
+      font-size: 1.6rem;
+      align-items: center;
+      column-gap: 15px;
+      
+      @media(min-width:$breakpoint-tablet-horizontal){
+        flex-direction: column;
+        justify-content: left;
+        align-items: center;
+      }
+
+    }
+
+    .icon-one,
+    .icon-two,
+    .icon-three {
+      background-color: white;
+      border-radius: 50%;
+      height: 105px;
+      width: 105px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #400d40;
+      font-size: 3rem;
+    }
+
+    .icon-two {
+      background-color: $color-accent;
+    }
+
+    .icon-three {
+      background-color: $color-lavender;
+    }
+  }
+
+  .container {
+    display: flex;
+    text-align: left;
+  }
+
+  .centerContentMaxWidth {
+    padding: 0;
+
+    &--small {
+      max-width: 900px;
+    }
+
+    &--large {
+      max-width: $container-max-width;
+    }
+
+    @media (max-width: 960px) {
+      padding-right: 60px;
+    }
+    @media (max-width: 375px) {
+      padding-right: 0;
+    }
+  }
+  .centerMaxWidthContainer {
+    padding: 36px;
+
+    @media (min-width: $breakpoint-tablet) {
+      padding: 20px 72px;
+      font-size: 1.2rem;
+    }
+
+    @media (min-width: $breakpoint-tablet-horizontal) {
+      padding: $padding-vertical-sm $desktop-width;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 40px;
+    font-weight: 300;
+
+    &--textLeft {
+      text-align: left;
+    }
+
+    &--textCenter {
+      text-align: center;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
