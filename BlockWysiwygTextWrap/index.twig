@@ -1,0 +1,12 @@
+<div class="flyntComponent componentSpacing" is="flynt-block-wysiwyg-text-wrap">
+  <div class="container centerMaxWidthContainer">
+      <div class="content content--{{ textAlignment }} {{ options.theme }} centerContentMaxWidth first-column">
+        {% if inner_content %}
+        <div class="content content--{{ textAlignment }}  {{ options_2.theme }} centerContentMaxWidth second-column">
+          {{ inner_content|e('wp_kses_post') }}
+        </div>
+        {% endif %}
+        <div>{{ contentHtml|e('wp_kses_post') }}</div>
+      </div>
+  </div>
+</div>

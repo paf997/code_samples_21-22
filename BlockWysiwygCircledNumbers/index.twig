@@ -1,0 +1,21 @@
+<div class="flyntComponent componentSpacing {{ options.theme }}" is="flynt-block-wysiwyg-circled-numbers">
+  <div class="centerMaxWidthContainer centerMaxWidthContainer--{{width}}">
+      <div class="first content content--{{ textAlignment }}" style="color:{{ colour }}">
+        {{ contentHtml|e('wp_kses_post') }}
+      </div>
+    <div class="counter-icons">
+      <div class="icon-container">
+        <div class="icon-one">{{icon_one|raw}}</div>
+        <div class="white">ANNUAL</br>FESTIVALS</div>
+      </div>
+      <div class="icon-container">
+        <div class="icon-two">{{icon_two|raw}}</div>
+        <div class="accent">CONCERTS</div>
+      </div>
+      <div class="icon-container">
+        <div class="icon-three">{{icon_three|raw}}</div>
+        <div class="lavender">ARTISTS</div>
+      </div>
+    </div>
+  </div>
+</div>
