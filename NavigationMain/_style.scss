@@ -1,0 +1,140 @@
+[is="flynt-navigation-main"] {
+  $navigation-height: 120px;
+  display: none;
+
+  @media (min-width: $breakpoint-tablet-horizontal) {
+    display: block;
+  }
+
+  .wrapper {
+    background-color: $color-brand;
+    height: $navigation-height;
+  }
+
+  &.overlap {
+    position: absolute;
+    width: 100%;
+    z-index: 1001;
+
+    .wrapper {
+      background: transparent;
+    }
+  }
+
+  .container {
+    display: flex;
+    height: 100%;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    float: right;
+  }
+
+  .header-left {
+    background-color: white;
+    float: left;
+    justify-content: center;
+    padding: 15px;
+  }
+
+  .header-rows {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  .language-selector {
+    display: flex;
+    justify-content: flex-end;
+
+    .button-wrapper {
+      display: flex;
+      justify-content: center;
+      padding-right: 18px;
+
+      .wpml-ls {
+        border: none;
+        padding: 0;
+
+        a {
+          font-size: 13px;
+          font-weight: 700;
+          padding: 0;
+          margin-left: 7px;
+        }
+      }
+    }
+
+    button {
+      color: white;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+
+      margin-left: 7px;
+
+      &:hover,
+      &:focus {
+        color: gold;
+      }
+    }
+  }
+
+  .logo {
+    display: block;
+    height: 100%;
+
+    &-image {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  .menu {
+    @include reset-list;
+    color:black;
+    align-items: center;
+    display: flex;
+    margin-right: -18px;
+    padding-left: 36px;
+
+    &-item {
+      border-bottom: 1px solid transparent;
+      height: 100%;
+      line-height: 2rem;
+      min-width: 100px;
+      position: relative;
+      text-align: center;
+
+      .menu-submenu {
+        background: none;
+        display: none;
+        left: -50%;
+        padding-top: 10px;
+        position: absolute;
+        width: 200%;
+        z-index: 1001;
+
+    
+
+    &-item--current {
+      .menu-link {
+        color: green;
+      }
+    }
+
+    &-link {
+      color: $color-text;
+      display: inline-block;
+      font-weight: 700;
+      padding: 7px 18px;
+      text-decoration: none;
+      transition: color 0.2s ease-out;
+
+      &:hover,
+      &:focus {
+        color: $color-accent;
+        border-bottom:1px solid $color-background;
+      }
+    }
+  }
+}

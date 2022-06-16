@@ -1,0 +1,41 @@
+{% if items|length > 0 %}
+	<div {% if options.anchorId %} id="{{ options.anchorId }}" {% endif %} class="flyntComponent vpad-{{ options.verticalPadding }}" is="flynt-grid-action" style="{{ style }}">
+		{% if preContentHtml %}
+			<div class="container centerMaxWidthContainer">
+				<div class="preContent">
+					{{ preContentHtml|e('wp_kses_post') }}
+				</div>
+			</div>
+		{% endif %}
+		<div class="container">
+			<ul class="grid grid--columns{{ options.columns }} grid--{{ gridStyle }}">
+				{% for item in items %}
+				{% set image = Image(item.image) %}
+					<li class="grid-item">
+						<div class="content ">
+							<a href="{{ item.pageLink ? item.pageLink : item.url }}" class="content-link" title="{{ item.title }}">
+								<div class="half-img-half-title">
+									<div class="img-half">
+										<div class="img-cover"></div>
+									<img class="content-image lazyload" src="{{ image.src|resizeDynamic(800) }}" srcset="{{ placeholderImage(800, 800 / image.aspect) }}" data-srcset="
+										{{ image.src|resizeDynamic(1920) }} 1920w,
+				            {{ image.src|resizeDynamic(1440) }} 1440w,
+				            {{ image.src|resizeDynamic(1320) }} 1320w,
+				            {{ image.src|resizeDynamic(1024) }} 1024w,
+				            {{ image.src|resizeDynamic(800) }} 800w,
+				            {{ image.src|resizeDynamic(600) }} 600w,
+				            {{ image.src|resizeDynamic(375) }} 375w" data-sizes="auto" alt="{{ image.alt|e }}">
+								
+									</div>
+									<div class="title-half title">
+										<div class="title-underline">{{ item.title }}</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endif %}
